@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Gerador de Header</title>
+</head>
+<body>
+    <header class="header-index">
+        <h1>Gerador de Header</h1>
+    </header>
+    <main class="main-style">
+        <button id="controls-btn"><img src="/images/arrow.png" alt="show-controls"></button>
+        <div class="controls" id="controls">
+            <h2>Controles</h2>
+            <div>
+                <h4>Digite o nome do site</h4>
+                <input type="text" name="input-name-site" id="input-name-site">
+            </div>
+            <div class="color-inputs">
+                <div>
+                    <h4>Cor de título</h4>
+                    <input type="color" name="colorSelectorTitle" id="colorSelectorTitle">
+                </div>
+                <div>
+                    <h4>Cor de fundo</h4>
+                    <input type="color" name="colorSelector" id="colorSelector">
+                </div>
+            </div>
+            <div>
+                <h4>Selecionar a fonte</h4>
+                <select name="font-style" id="font-style">
+                    <option value="">Selecionar</option>
+                    <option value="'Inter', sans-serif">Inter</option>
+                    <option value="'Open Sans', sans-serif">Open Sans</option>
+                    <option value="'Montserrat', sans-serif">Montserrat</option>
+                    <option value="'Poppins', sans-serif">Poppins</option>
+                    <option value="'Lato', sans-serif">Lato</option>
+                    <option value="'Ubuntu', sans-serif">Ubuntu</option>
+                    <option value="'Roboto', sans-serif">Roboto</option>
+                </select>
+            </div>
+            <div>
+                <h4>Adicionar logo</h4>
+                <input type="file" id="selectImageId" accept="image/*">
+                <button type="button" id="removeImageId">Remover Imagem</button>
+                <h4>Tamanho do logo</h4>
+                <input type="range" name="logo-size" id="logo-size" min="30" max="60">
+                <h4>Arredondar bordas</h4>
+                <input type="range" name="logo-rounded" id="logo-rounded" min="0" max="50">
+            </div>
+            <div>
+                <h4>Adicionar itens</h4>
+                <input type="text" name="input-items" id="input-items">
+                <button id="addNavItem">Adicionar</button>
+            </div>
+            <div>
+                <h4>Selecionar o espaçamento</h4>
+                <select name="justify" id="justify">
+                    <option value="">Selecionar</option>
+                    <option value="space-between">Grande</option>
+                    <option value="space-around">Médio</option>
+                    <option value="space-evenly">Pequeno</option>
+                    <option value="baseline">Início</option>
+                    <option value="center">Centro</option>
+                    <option value="end">Final</option>
+                </select>
+            </div>
+            <div>
+                <h4>Estilizar itens</h4>
+                <select name="style-items-select" id="style-items-select">
+                    <option value="Selecionar">Selecionar</option>
+                </select>
+                <button id="remove-item">Remover item</button>
+                <h4>Tamanho da fonte</h4>
+                <input type="range" name="range-font-size" id="range-font-size" min="8" max="30">
+                <h4>Cor do item</h4>
+                <input type="color" name="item-color" id="item-color">
+            </div>
+        </div>
+        <div class="headers-show">
+            <div class="select-size">
+                <h4>Veja como ficará em diferentes tamanhos de telas</h4>
+                <select name="screen-size" id="screen-size">
+                    <option selected value="div-header-desktop">>1024px</option>
+                    <option value="div-header-desktop-1024">1024px</option>
+                    <option value="div-header-tablet-768">768px</option>
+                    <option value="div-header-mobile-425">425px</option>
+                    <option value="div-header-mobile-375">375px</option>
+                </select>
+            </div>
+            <div class="div-header-desktop" id="div-screen-size">
+                <h3>Resultado</h3>
+                <header-gerado></header-gerado>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="headerGerado.js"></script>
+</body>
+</html>
