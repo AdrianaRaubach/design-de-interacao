@@ -93,7 +93,7 @@ class Header extends HTMLElement {
             </div>
             <ul class="ul-properties" id="ul-items">
             </ul>
-            <button class="display-none" id="menu-btn"><img src="images/menu.svg" alt="menuImg"></button>
+            <button class="display-none" id="menu-btn"><img src="src/images/menu.svg" alt="menuImg"></button>
         </header>
       `;
     }
