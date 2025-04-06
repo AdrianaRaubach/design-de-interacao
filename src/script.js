@@ -187,12 +187,12 @@ class Header extends HTMLElement {
             
             const listItems = this.querySelector('#ul-items');
             if (listItems) {
-                listItems.insertAdjacentHTML('beforeend', `<li id=${item}><a>${item}</a></li>`);
+                listItems.insertAdjacentHTML('beforeend', `<li id=${item.replace(/\s/g, "-")}><a>${item}</a></li>`);
             }
             const itemSelector = document.getElementById('style-items-select');
             if (itemSelector) {
                 itemSelector.insertAdjacentHTML(
-                    'beforeend', `<option id=${item+item} value="${item}">${item}</option>`
+                    'beforeend', `<option id=${item+item} value="${item.replace(/\s/g, "-")}">${item.replace(/\s/g, "-")}</option>`
                 );
             }
             itemInput.value = '';
@@ -240,6 +240,7 @@ class Header extends HTMLElement {
                 listItems.classList.remove('ul-col')
             }
         });
+        
         menuImg.addEventListener('click', (e) => {
             const listItems = this.querySelector('#ul-items');
             
