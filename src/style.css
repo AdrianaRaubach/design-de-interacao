@@ -30,6 +30,8 @@
     overflow-y: scroll;
     overflow-x: hidden;
     width: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
 .controls::-webkit-scrollbar {
@@ -76,4 +78,52 @@ body {
 }
 .select-size {
     padding: 20px;
+}
+.ul-items-menu {
+    align-items: center;
+    justify-content: center;
+}
+.menu-items-border {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.remove-items-menu-div, .cards-border {
+    display: flex;
+    gap: 10px;
+}
+#web-site {
+    background-color: var(--bg-website);
+}
+#code-web-site-show {
+    max-width: 800px;
+}
+
+.show-header-controls, .show-menu-controls, .show-gallery-controls, .show-form-controls, .show-footer-controls{
+    background-color: rgb(92, 95, 255);
+    margin-top: 20px;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 5px;
+    color: aliceblue;
+    font-weight: 700;
+}
+
+.save-code, .show-code, .clear-code {
+    background-color: rgb(26, 83, 238);
+    margin-top: 20px;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 5px;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 12px;
+}
+.btns-localStorage {
+    display: flex;
+    gap: 5px;
+}
+
+button:hover {
+    opacity: 80%;
 }

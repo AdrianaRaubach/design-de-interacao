@@ -8,79 +8,330 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <title>Gerador de Header</title>
+    <title>Gerador de Site</title>
 </head>
 <body>
     <header class="header-index">
-        <h1>Gerador de Header</h1>
+        <h1>Gerador de Site</h1>
     </header>
     <main class="main-style">
         <button id="controls-btn"><img src="src/images/arrow.png" alt="show-controls"></button>
         <div class="controls" id="controls">
-            <h2>Controles</h2>
             <div>
-                <h4>Digite o nome do site</h4>
-                <input type="text" name="input-name-site" id="input-name-site" maxlength="10">
+                <h2>Controles</h2>
+                <p>Utilize os controles abaixo para gerar os itens do seu site, vizualize as alterações em tempo real!</p>
             </div>
-            <div class="color-inputs">
+            <div>
+                <h4>Escolha a cor de fundo do site</h4>
+                <input type="color" name="bg-website-input" id="bg-website-input">
+            </div>
+            <button class="show-header-controls">Header</button>
+            <div class="header-controls">
                 <div>
-                    <h4>Cor de título</h4>
-                    <input type="color" name="colorSelectorTitle" id="colorSelectorTitle">
+                    <h4>Digite o nome do site</h4>
+                    <input type="text" name="input-name-site" id="input-name-site" maxlength="10">
+                </div>
+                <div class="color-inputs">
+                    <div>
+                        <h4>Cor de título</h4>
+                        <input type="color" name="colorSelectorTitle" id="colorSelectorTitle">
+                    </div>
+                    <div>
+                        <h4>Cor de fundo</h4>
+                        <input type="color" name="colorSelector" id="colorSelector">
+                    </div>
                 </div>
                 <div>
-                    <h4>Cor de fundo</h4>
-                    <input type="color" name="colorSelector" id="colorSelector">
+                    <h4>Selecionar a fonte</h4>
+                    <select name="font-style" id="font-style">
+                        <option value="">Selecionar</option>
+                        <option value="'Inter', sans-serif">Inter</option>
+                        <option value="'Open Sans', sans-serif">Open Sans</option>
+                        <option value="'Montserrat', sans-serif">Montserrat</option>
+                        <option value="'Poppins', sans-serif">Poppins</option>
+                        <option value="'Lato', sans-serif">Lato</option>
+                        <option value="'Ubuntu', sans-serif">Ubuntu</option>
+                        <option value="'Roboto', sans-serif">Roboto</option>
+                    </select>
+                </div>
+                <div>
+                    <h4>Adicionar logo</h4>
+                    <input type="file" id="selectImageId" accept="image/*">
+                    <button type="button" id="removeImageId">Remover Imagem</button>
+                    <h4>Tamanho do logo</h4>
+                    <input type="range" name="logo-size" id="logo-size" min="30" max="60">
+                    <h4>Arredondar bordas</h4>
+                    <input type="range" name="logo-rounded" id="logo-rounded" min="0" max="50">
+                </div>
+                <div>
+                    <h4>Adicionar itens</h4>
+                    <input type="text" name="input-items" id="input-items">
+                    <button id="addNavItem">Adicionar</button>
+                </div>
+                <div>
+                    <h4>Selecionar o espaçamento</h4>
+                    <select name="justify" id="justify">
+                        <option value="">Selecionar</option>
+                        <option value="space-between">Grande</option>
+                        <option value="space-around">Médio</option>
+                        <option value="space-evenly">Pequeno</option>
+                        <option value="baseline">Início</option>
+                        <option value="center">Centro</option>
+                        <option value="end">Final</option>
+                    </select>
+                </div>
+                <div>
+                    <h4>Estilizar itens</h4>
+                    <select name="style-items-select" id="style-items-select">
+                        <option value="Selecionar">Selecionar</option>
+                    </select>
+                    <button id="remove-item">Remover item</button>
+                    <h4>Tamanho da fonte</h4>
+                    <input type="range" name="range-font-size" id="range-font-size" min="8" max="30">
+                    <h4>Cor do item</h4>
+                    <input type="color" name="item-color" id="item-color">
                 </div>
             </div>
-            <div>
-                <h4>Selecionar a fonte</h4>
-                <select name="font-style" id="font-style">
-                    <option value="">Selecionar</option>
-                    <option value="'Inter', sans-serif">Inter</option>
-                    <option value="'Open Sans', sans-serif">Open Sans</option>
-                    <option value="'Montserrat', sans-serif">Montserrat</option>
-                    <option value="'Poppins', sans-serif">Poppins</option>
-                    <option value="'Lato', sans-serif">Lato</option>
-                    <option value="'Ubuntu', sans-serif">Ubuntu</option>
-                    <option value="'Roboto', sans-serif">Roboto</option>
-                </select>
+            <button class="show-menu-controls">Menu</button>
+            <div class="menu-controls">
+                <div>
+                    <h4>Adicionar itens</h4>
+                    <input type="text" name="items-menu" id="items-menu">
+                    <button id="add-items-menu">Adicionar</button>
+                </div>
+                <div>
+                    <h4>Adicionar imagem</h4>
+                    <input type="file" id="selectImageMenuId" accept="image/*">
+                    <button type="button" id="removeImageMenuId">Remover Imagem</button>
+                    <h4>Tamanho da imagem</h4>
+                    <input type="range" name="image-menu-size" id="image-menu-size" min="30" max="300">
+                    <h4>Arredondar bordas</h4>
+                    <input type="range" name="image-menu-rounded" id="image-menu-rounded" min="0" max="50">
+                </div>
+                <div class="color-inputs-menu">
+                    <div>
+                        <h4>Cor de fundo do Menu</h4>
+                        <input type="color" name="colorSelectorBgMenu" id="colorSelectorBgMenu">
+                    </div>
+                    <div>
+                        <h4>Estilizar itens</h4>
+                        <div class="remove-items-menu-div">
+                            <select name="list-items-menu" id="list-items-menu">
+                                <option value="">Selecionar</option>
+                            </select>
+                            <button id="remove-menu-items-btn">Remover</button>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Tamanho da fonte</h4>
+                        <input type="range" name="range-font-size-menu" id="range-font-size-menu" min="8" max="30">
+                    </div>
+                    <div>
+                        <h4>Cor dos itens</h4>
+                        <input type="color" name="colorSelectorItemsMenu" id="colorSelectorItemsMenu">
+                    </div>
+                    <div>
+                        <h4>Cor de fundo dos itens</h4>
+                        <input type="color" name="bgcolorSelectorItemsMenu" id="bgcolorSelectorItemsMenu">
+                    </div>
+                    <div>
+                        <h4>Bordas do menu</h4>
+                        <div class="menu-items-border">
+                            <select name="border-menu" id="border-menu-select">
+                                <option value="">Selecionar</option>
+                                <option value="solid 1px">Borda 1</option>
+                                <option value="solid 2px">Borda 2</option>
+                                <option value="dashed 2px">Borda 3</option>
+                                <option value="dotted 2px">Borda 4</option>
+                                <option value="double 2px">Borda 5</option>
+                                <option value="ridge">Borda 6</option>
+                                <option value="inset">Borda 7</option>
+                            </select>
+                            <div>
+                                <input type="range" name="rounded-border-menu" id="rounded-border-menu" min="0" max="50">
+                            </div>
+                        </div>
+                        <h4>Bordas dos itens</h4>
+                        <div class="menu-items-border">
+                            <select name="border-items-menu" id="border-items-menu">
+                                <option value="">Selecionar</option>
+                                <option value="solid 1px">Borda 1</option>
+                                <option value="solid 2px">Borda 2</option>
+                                <option value="dashed 1px">Borda 3</option>
+                                <option value="dotted 1px">Borda 4</option>
+                                <option value="double 1px">Borda 5</option>
+                                <option value="ridge">Borda 6</option>
+                                <option value="inset">Borda 7</option>
+                            </select>
+                            <div>
+                                <input type="range" name="rounded-border-menu-items" id="rounded-border-menu-items" min="0" max="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Selecionar o espaçamento</h4>
+                        <select name="justify-menu" id="justify-menu">
+                            <option value="">Selecionar</option>
+                            <option value="20px">Grande</option>
+                            <option value="15px">Médio</option>
+                            <option value="10px">Pequeno</option>
+                            <option value="5px">Mini</option>
+                            <option value="5px">Sem espaçamento</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h4>Adicionar logo</h4>
-                <input type="file" id="selectImageId" accept="image/*">
-                <button type="button" id="removeImageId">Remover Imagem</button>
-                <h4>Tamanho do logo</h4>
-                <input type="range" name="logo-size" id="logo-size" min="30" max="60">
-                <h4>Arredondar bordas</h4>
-                <input type="range" name="logo-rounded" id="logo-rounded" min="0" max="50">
-            </div>
-            <div>
-                <h4>Adicionar itens</h4>
-                <input type="text" name="input-items" id="input-items">
-                <button id="addNavItem">Adicionar</button>
-            </div>
-            <div>
+            <button class="show-gallery-controls">Galeria</button>
+            <div class="gallery-controls">
+                <div>
+                    <h4>Adicionar imagem</h4>
+                    <input type="file" id="selectImageCardId" accept="image/*">
+                </div>
+                <h4>Descrição da imagem</h4>
+                <input type="text" name="description-image-gallery" id="description-image-gallery">
+                <button id="btn-add-card">Adicionar a galeria</button>
+
+                <div>
+                    <h4>Alterar propriedades</h4>
+                    <select name="select-card-name" id="select-card-name">
+                        <option value="">Selecionar</option>
+                    </select>
+                    <button class="remove-card">Remover Card</button>
+                </div>
+
+                <div>
+                    <h4>Tamanho da fonte</h4>
+                    <input type="range" name="size-text-card" id="size-text-card" min="5" max="40">
+                </div>
+                <div>
+                    <h4>Cor do texto</h4>
+                    <input type="color" name="input-color-text-card" id="input-color-text-card">
+                    <h4>Cor do fundo</h4>
+                    <input type="color" name="input-bgcolor-text-card" id="input-bgcolor-text-card">
+                </div>
                 <h4>Selecionar o espaçamento</h4>
-                <select name="justify" id="justify">
+                <select name="justify-cards" id="justify-cards">
                     <option value="">Selecionar</option>
-                    <option value="space-between">Grande</option>
-                    <option value="space-around">Médio</option>
-                    <option value="space-evenly">Pequeno</option>
-                    <option value="baseline">Início</option>
-                    <option value="center">Centro</option>
-                    <option value="end">Final</option>
+                    <option value="20px">Grande</option>
+                    <option value="15px">Médio</option>
+                    <option value="10px">Pequeno</option>
+                    <option value="5px">Mini</option>
                 </select>
+                <h4>Bordas dos cards</h4>
+                <div class="cards-border">
+                    <select name="border-cards" id="border-cards">
+                        <option value="">Selecionar</option>
+                        <option value="solid 1px">Borda 1</option>
+                        <option value="solid 2px">Borda 2</option>
+                        <option value="dashed 1px">Borda 3</option>
+                        <option value="dotted 1px">Borda 4</option>
+                        <option value="double 1px">Borda 5</option>
+                        <option value="ridge">Borda 6</option>
+                        <option value="inset">Borda 7</option>
+                    </select>
+                    <div>
+                        <input type="range" name="rounded-border-cards" id="rounded-border-cards" min="0" max="35">
+                    </div>
+                </div>
             </div>
-            <div>
-                <h4>Estilizar itens</h4>
-                <select name="style-items-select" id="style-items-select">
-                    <option value="Selecionar">Selecionar</option>
-                </select>
-                <button id="remove-item">Remover item</button>
-                <h4>Tamanho da fonte</h4>
-                <input type="range" name="range-font-size" id="range-font-size" min="8" max="30">
-                <h4>Cor do item</h4>
-                <input type="color" name="item-color" id="item-color">
+            <button class="show-form-controls">Formulário</button>
+            <div class="form-controls">
+                <div class="control-group">
+                    <h4>Adicionar Campo</h4>
+                    <select id="field-type-select">
+                        <option value="">Selecionar tipo</option>
+                        <option value="text">Texto</option>
+                        <option value="email">E-mail</option>
+                        <option value="date">Data</option>
+                        <option value="select">Menu Suspenso</option>
+                        <option value="radio">Opções (Radio)</option>
+                        <option value="checkbox">Checkbox</option>
+                        <option value="textarea">Área de Texto</option>
+                    </select>
+                    <button id="btn-add-field">Adicionar Campo</button>
+                </div>
+                <div class="control-group">
+                    <h4>Editar Campo</h4>
+                    <select id="select-field-name">
+                        <option value="">Selecionar campo</option>
+                    </select>
+                    <button class="remove-field">Remover Campo</button>
+                </div>
+                <div class="control-group">
+                    <h4>Estilo dos Labels</h4>
+                    <div class="style-control">
+                        <label for="label-font-size">Tamanho da Fonte</label>
+                        <input type="range" id="label-font-size" min="8" max="24" value="14">
+                    </div>
+                    <div class="style-control">
+                        <label for="label-color">Cor do Texto</label>
+                        <input type="color" id="label-color">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <h4>Estilo dos Campos</h4>
+                    <div class="style-control">
+                        <label for="field-color">Cor do Texto</label>
+                        <input type="color" id="field-color">
+                    </div>
+                    <div class="style-control">
+                        <label for="field-bg-color">Cor de Fundo</label>
+                        <input type="color" id="field-bg-color">
+                    </div>
+                    <div class="style-control">
+                        <label for="field-border-radius">Borda Arredondada</label>
+                        <input type="range" id="field-border-radius" min="0" max="20" value="4">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <h4>Estilo do Formulário</h4>
+                    <div class="style-control">
+                        <label for="form-bg-color">Cor de Fundo</label>
+                        <input type="color" id="form-bg-color">
+                    </div>
+                    <div class="style-control">
+                        <label for="form-padding">Espaçamento Interno</label>
+                        <input type="range" id="form-padding" min="0" max="30" value="20">
+                    </div>
+                </div>
+            </div>
+            <button class="show-footer-controls">Footer</button>
+            <div class="footer-controls">
+                <div>
+                    <h4>Adicionar itens</h4>
+                    <input type="text" name="input-items-footer" id="input-items-footer">
+                    <button id="add-item-footer-btn">Adicionar</button>
+                </div>
+                <div>
+                    <h4>Selecionar o espaçamento</h4>
+                    <select name="justify-footer" id="justify-footer">
+                        <option value="">Selecionar</option>
+                        <option value="space-between">Grande</option>
+                        <option value="space-around">Médio</option>
+                        <option value="space-evenly">Pequeno</option>
+                        <option value="baseline">Início</option>
+                        <option value="center">Centro</option>
+                        <option value="end">Final</option>
+                    </select>
+                </div>
+                <div>
+                    <h4>Estilizar itens</h4>
+                    <select name="style-items-footer-select" id="style-items-footer-select">
+                        <option value="Selecionar">Selecionar</option>
+                    </select>
+                    <button id="remove-item-footer">Remover item</button>
+                    <h4>Tamanho da fonte</h4>
+                    <input type="range" name="range-font-size-footer" id="range-font-size-footer" min="8" max="30">
+                    <h4>Cor do item</h4>
+                    <input type="color" name="item-footer-color" id="item-footer-color">
+                    <h4>Cor de Fundo</h4>
+                    <input type="color" name="item-footer-colorbg" id="item-footer-colorbg">
+                </div>
+            </div>
+            <div class="btns-localStorage">
+                <button class="save-code">Salvar código</button>
+                <button class="show-code">Recuperar código</button>
+                <button class="clear-code">Limpar localStorage</button>
             </div>
         </div>
         <div class="headers-show">
@@ -94,9 +345,13 @@
                     <option value="div-header-mobile-375">375px</option>
                 </select>
             </div>
-            <div class="div-header-desktop" id="div-screen-size">
-                <h3>Resultado</h3>
-                <header-gerado></header-gerado>
+            <div id="web-site">
+                <div class="div-header-desktop" id="div-screen-size">
+                    <website-gerado></website-gerado>
+                </div>
+            </div>
+            <div>
+                <div id="code-web-site-show"></div>
             </div>
         </div>
     </main>
