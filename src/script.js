@@ -151,6 +151,21 @@ class Website extends HTMLElement {
             .form {
                 padding: 20px;
             }
+                .section-1 , .footer-generated{
+                margin-top: 40px;
+                align-items: start;
+            }
+            .form-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap:5px
+            }
+            .form form div {
+                padding-top: 10px;
+                display: flex;
+                gap: 5px;
+            }
         </style>
         <header id="header-gerado" class="background-color-header properties">
             <div class="logo-web">
@@ -169,7 +184,9 @@ class Website extends HTMLElement {
             <div class="gallery">
             </div>
         </section>
-        <section class="form">
+        <section class="form-section">
+            <div class="form">
+            </div>
         </section>
         <footer class="footer-generated">
          <ul class="ul-properties" id="ul-items-footer">
